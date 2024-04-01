@@ -8,6 +8,7 @@ openai = "*"
 langchain = "*"
 python-dotenv = "*"
 langchain-openai = "*"
+pypdf = "*"
 
 [dev-packages]
 

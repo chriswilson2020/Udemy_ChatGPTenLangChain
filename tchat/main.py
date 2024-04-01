@@ -7,7 +7,7 @@ from langchain.chains import LLMChain
 from langchain.memory import ConversationBufferMemory, FileChatMessageHistory, ConversationSummaryMemory
 
 
-chat = ChatOpenAI(openai_api_key=api_key, model="gpt-3.5-turbo")
+chat = ChatOpenAI(openai_api_key=api_key, model="gpt-3.5-turbo", verbose=True)
 memory = ConversationSummaryMemory(
     memory_key="messages",
     return_messages=True,
@@ -25,7 +25,8 @@ prompt = ChatPromptTemplate(
 chain = LLMChain(
     llm=chat,
     prompt=prompt,
-    memory=memory
+    memory=memory,
+    #verbose=True
 )
 
 while True:
